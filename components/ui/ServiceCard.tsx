@@ -1,3 +1,5 @@
+"use client";
+
 import { CodeIcon, AppIcon, HostingIcon } from "./Icons";
 
 interface ServiceCardProps {
@@ -16,10 +18,10 @@ export default function ServiceCard({ title, description, icon }: ServiceCardPro
   const IconComponent = iconMap[icon] || CodeIcon;
 
   return (
-    <div className="flex items-start gap-3 sm:gap-4 group">
+    <div className="flex items-start gap-3 sm:gap-4 group cursor-pointer hover-lift p-2 -m-2 rounded-xl">
       <div className="flex items-center gap-2 sm:gap-3">
-        <div className="w-0.5 sm:w-1 h-10 sm:h-12 bg-accent rounded-full opacity-80 group-hover:h-12 sm:group-hover:h-16 transition-all duration-300" />
-        <div className="p-2 sm:p-3 rounded-lg bg-white/5 border border-white/10 group-hover:border-accent/50 transition-colors duration-300">
+        <div className="w-0.5 sm:w-1 h-10 sm:h-12 bg-accent rounded-full opacity-80 group-hover:h-14 sm:group-hover:h-16 transition-all duration-300 group-hover:opacity-100" />
+        <div className="p-2 sm:p-3 rounded-lg bg-white/5 border border-white/10 group-hover:border-accent/50 group-hover:bg-accent/10 transition-all duration-300 group-hover:scale-110">
           <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
         </div>
       </div>
@@ -27,7 +29,7 @@ export default function ServiceCard({ title, description, icon }: ServiceCardPro
         <h3 className="text-white font-semibold text-base sm:text-lg mb-0.5 sm:mb-1 group-hover:text-accent transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-gray-400 text-xs sm:text-sm leading-relaxed hidden sm:block">
+        <p className="text-gray-400 text-xs sm:text-sm leading-relaxed hidden sm:block group-hover:text-gray-300 transition-colors">
           {description}
         </p>
       </div>

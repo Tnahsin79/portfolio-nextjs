@@ -61,7 +61,158 @@ body {
   background: var(--color-accent-light);
 }
 
-/* Custom Animations */
+/* ================================
+   3D & Animation Utilities
+   ================================ */
+
+/* 3D Perspective Container */
+.perspective {
+  perspective: 1000px;
+}
+
+.perspective-lg {
+  perspective: 2000px;
+}
+
+/* Preserve 3D transforms */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* 3D Card Tilt Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-3d:hover {
+  transform: rotateX(5deg) rotateY(-5deg) translateZ(10px);
+}
+
+.card-3d-content {
+  transform: translateZ(20px);
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(-1deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+/* Glow Pulse */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(224, 122, 95, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(224, 122, 95, 0.6), 0 0 60px rgba(224, 122, 95, 0.3);
+  }
+}
+
+/* Rotate 3D */
+@keyframes rotate-3d {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Scale Pop */
+@keyframes scale-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Reveal Animations */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px) rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-60px) rotateY(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes reveal-right {
+  from {
+    opacity: 0;
+    transform: translateX(60px) rotateY(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateY(0deg);
+  }
+}
+
+@keyframes reveal-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotateX(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+/* Basic Keyframes */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -72,12 +223,13 @@ body {
 }
 
 @keyframes pulse-slow {
-  0%,
-  100% {
+  0%, 100% {
     opacity: 0.8;
+    transform: scale(1);
   }
   50% {
     opacity: 1;
+    transform: scale(1.02);
   }
 }
 
@@ -145,7 +297,10 @@ body {
   }
 }
 
-/* Animation Classes */
+/* ================================
+   Animation Classes
+   ================================ */
+
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
@@ -178,6 +333,50 @@ body {
   animation: scale-in 0.5s ease-out forwards;
 }
 
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Reveal animation classes */
+.animate-reveal-up {
+  animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-reveal-left {
+  animation: reveal-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-reveal-right {
+  animation: reveal-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-reveal-scale {
+  animation: reveal-scale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 /* Animation Delays */
 .animation-delay-100 {
   animation-delay: 100ms;
@@ -199,7 +398,101 @@ body {
   animation-delay: 500ms;
 }
 
-/* Utility Classes */
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-700 {
+  animation-delay: 700ms;
+}
+
+/* ================================
+   Scroll-triggered Animation States
+   ================================ */
+
+.scroll-animate {
+  opacity: 0;
+}
+
+.scroll-animate.is-visible {
+  opacity: 1;
+}
+
+.scroll-animate.reveal-up {
+  transform: translateY(60px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-animate.reveal-up.is-visible {
+  transform: translateY(0);
+}
+
+.scroll-animate.reveal-left {
+  transform: translateX(-60px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-animate.reveal-left.is-visible {
+  transform: translateX(0);
+}
+
+.scroll-animate.reveal-right {
+  transform: translateX(60px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-animate.reveal-right.is-visible {
+  transform: translateX(0);
+}
+
+.scroll-animate.reveal-scale {
+  transform: scale(0.9);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-animate.reveal-scale.is-visible {
+  transform: scale(1);
+}
+
+/* ================================
+   3D Card Hover Effects
+   ================================ */
+
+.hover-3d {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(224, 122, 95, 0.1);
+}
+
+.hover-lift {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hover-glow {
+  transition: all 0.4s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 
+    0 0 20px rgba(224, 122, 95, 0.3),
+    0 0 40px rgba(224, 122, 95, 0.1);
+}
+
+/* ================================
+   Utility Classes
+   ================================ */
+
 .text-gradient {
   background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
   -webkit-background-clip: text;
@@ -233,6 +526,12 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.glass-dark {
+  background: rgba(26, 31, 46, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 /* Focus Styles */
 input:focus,
 textarea:focus,
@@ -244,6 +543,17 @@ button:focus {
 .preload * {
   animation-duration: 0s !important;
   transition: none !important;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Responsive Typography */
