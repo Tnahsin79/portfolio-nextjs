@@ -123,42 +123,44 @@ export const experiences = [
   },
 ];
 
-export const projects = [
+// Project type definition
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image?: string;
+  tags: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+}
+
+export const projects: Project[] = [
   {
     id: 1,
     title: "Quivio CRM Application",
     description: "Worked as a Backend Developer on the Marketing and Automation application using NestJS and PostgreSQL, developing multiple modules focused on customer engagement, including segmentation, triggers, campaigns, checkout forms, and two-way communication to enhance interaction between customers and the organization.",
-    // image: "/projects/ecommerce.jpg",
     tags: ["Nest.js", "TypeScript", "PostgreSQL", "Redis", "Microservices"],
     liveUrl: "https://app.quivio.com/login",
-    // githubUrl: "https://github.com",
   },
   {
     id: 2,
     title: "Lyca Mobile App",
     description: "Worked as a Frontend Developer, building UI components and application features by integrating data from the CMS, while also focusing on performance optimization and designing reusable, scalable components.",
-    // image: "/projects/taskapp.jpg",
     tags: ["Next.js", "TypeScript", "JavaScript", "CSS", "Material UI"],
     liveUrl: "https://www.lycamobile.us/en/",
-    // githubUrl: "https://github.com",
   },
   {
     id: 3,
     title: "iRights Application",
     description: "The RnP Tool is responsible for managing publication manuscripts and related assets, as well as overseeing and controlling permissions obtained from rights holders to ensure their authorized use throughout the publication process.",
-    // image: "/projects/portfolio.jpg",
     tags: ["React", "API Integration", "Node.js", "MS SQL Server"],
     liveUrl: "https://irights.integra.co.in/login",
-    // githubUrl: "https://github.com",
   },
   {
     id: 4,
     title: "Author Management and Affiliation Tool",
     description: "The AMT Tool is designed to create, manage, and maintain manuscripts along with the associated author and affiliation information, ensuring that all publication-related data is accurately structured, consistently maintained, and efficiently handled throughout the lifecycle of a manuscript.",
-    // image: "/projects/weather.jpg",
     tags: ["React", "API Integration", "Node.js", "PostgreSQL"],
-    // liveUrl: "https://example.com",
-    // githubUrl: "https://github.com",
   },
 ];
 
