@@ -76,18 +76,18 @@ export const services = [
 ];
 
 export const stats = [
+  // {
+  //   value: "120",
+  //   suffix: "+",
+  //   label: "Completed Projects",
+  // },
+  // {
+  //   value: "95",
+  //   suffix: "%",
+  //   label: "Client satisfaction",
+  // },
   {
-    value: "120",
-    suffix: "+",
-    label: "Completed Projects",
-  },
-  {
-    value: "95",
-    suffix: "%",
-    label: "Client satisfaction",
-  },
-  {
-    value: "10",
+    value: "4",
     suffix: "+",
     label: "Years of experience",
   },
