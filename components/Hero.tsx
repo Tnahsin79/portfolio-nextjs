@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { personalInfo } from "@/data/constants";
 import Button from "./ui/Button";
 
@@ -69,12 +70,15 @@ export default function Hero() {
                 {/* Dark Inner Circle */}
                 <div className="absolute inset-3 sm:inset-4 rounded-full bg-primary" />
 
-                {/* Profile Image Placeholder */}
-                <div className="absolute inset-4 sm:inset-6 rounded-full overflow-hidden bg-gradient-to-br from-gray-700 to-gray-800 group-hover:from-gray-600 group-hover:to-gray-700 transition-all duration-500">
-                  {/* You can add an actual image here */}
-                  <div className="w-full h-full flex items-center justify-center text-4xl sm:text-5xl md:text-6xl">
-                    👨‍💻
-                  </div>
+                {/* Profile Image */}
+                <div className="absolute inset-4 sm:inset-6 rounded-full overflow-hidden bg-primary">
+                  <Image
+                    src="/profile.png"
+                    alt={personalInfo.name}
+                    fill
+                    className="object-cover object-top scale-110 group-hover:scale-115 transition-transform duration-500"
+                    priority
+                  />
                 </div>
 
                 {/* Decorative Arc - Spinning */}
