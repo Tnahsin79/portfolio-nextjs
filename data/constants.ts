@@ -9,7 +9,7 @@ export const personalInfo = {
   phone: "+91 7838976975",
   location: "Delhi, India",
   bio: "I started my software journey as a MERN developer. Through that, I learned to love the process of creating from scratch. Since then, this has led me to software development as it fulfills my love for learning and building things.",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/api/resume",
   profileImage: "/profile.png",
 };
 
