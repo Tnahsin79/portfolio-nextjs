@@ -10,9 +10,30 @@ export const personalInfo = {
   email: "4unishant@gmail.com",
   phone: "+91 7838976975",
   location: "Delhi, India",
-  bio: "I started my software journey as a MERN developer. Through that, I learned to love the process of creating from scratch. Since then, this has led me to software development as it fulfills my love for learning and building things.",
   resumeUrl: "/api/resume",
   profileImage: "/profile.png",
+};
+
+// Structured About Section
+export const aboutContent = {
+  intro: "I'm a Full-Stack Developer with 4+ years of experience building production-ready web applications that serve thousands of users daily.",
+  whatIBuild: {
+    title: "What I Build",
+    description: "I specialize in building scalable backend systems, RESTful APIs, and responsive web applications. From CRM platforms to publication management tools, I've worked on products that handle real user traffic and complex business logic.",
+  },
+  strengths: {
+    title: "My Strengths",
+    items: [
+      { label: "Backend Architecture", desc: "Microservices, NestJS, Node.js" },
+      { label: "Database Design", desc: "PostgreSQL, Redis, Query Optimization" },
+      { label: "Frontend Development", desc: "React, Next.js, TypeScript" },
+      { label: "Clean Code", desc: "Best practices, Code reviews, Documentation" },
+    ],
+  },
+  lookingFor: {
+    title: "What I'm Looking For",
+    description: "I'm seeking challenging roles where I can architect scalable systems, mentor growing teams, and contribute to products that make a real impact. Open to full-time opportunities in backend or full-stack development.",
+  },
 };
 
 export const navLinks = [
@@ -61,22 +82,46 @@ export const skillCategories = [
   {
     title: "Frontend",
     icon: "frontend",
-    skills: ["React.js", "Next.js", "HTML / CSS", "Tailwind / MUI"],
+    context: "Building responsive, performant UIs",
+    skills: [
+      { name: "React.js", level: "Advanced" },
+      { name: "Next.js", level: "Advanced" },
+      { name: "TypeScript", level: "Advanced" },
+      { name: "Tailwind / MUI", level: "Proficient" },
+    ],
   },
   {
     title: "Backend",
     icon: "backend",
-    skills: ["Node.js", "Express.js", "NestJS", "REST APIs"],
+    context: "Designing scalable APIs & services",
+    skills: [
+      { name: "NestJS", level: "Advanced" },
+      { name: "Node.js", level: "Advanced" },
+      { name: "Express.js", level: "Proficient" },
+      { name: "REST APIs", level: "Advanced" },
+    ],
   },
   {
     title: "Databases",
     icon: "database",
-    skills: ["PostgreSQL", "MongoDB", "Schema Design", "Multitenancy"],
+    context: "Optimizing data storage & queries",
+    skills: [
+      { name: "PostgreSQL", level: "Advanced" },
+      { name: "Redis", level: "Proficient" },
+      { name: "MongoDB", level: "Familiar" },
+      { name: "Schema Design", level: "Advanced" },
+    ],
   },
   {
     title: "Dev & Tools",
     icon: "tools",
-    skills: ["Git / GitHub", "Docker", "Jest", "CI/CD"],
+    context: "Streamlining development workflow",
+    skills: [
+      { name: "Git / GitHub", level: "Advanced" },
+      { name: "Docker", level: "Familiar" },
+      { name: "Jest", level: "Proficient" },
+      { name: "CI/CD", level: "Proficient" },
+    ],
   },
 ];
 

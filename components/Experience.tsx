@@ -4,10 +4,11 @@ import { experiences } from "@/data/constants";
 import SectionTitle from "./ui/SectionTitle";
 import AnimatedSection from "./ui/AnimatedSection";
 import Card3D from "./ui/Card3D";
+import Button from "./ui/Button";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-16 lg:py-24 bg-white/[0.02]">
+    <section id="experience" className="py-12 sm:py-16 lg:py-24 border-y border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection animation="reveal-up">
           <SectionTitle
@@ -88,6 +89,15 @@ export default function Experience() {
               </AnimatedSection>
             ))}
           </div>
+
+          {/* CTA */}
+          <AnimatedSection animation="reveal-up" delay={450}>
+            <div className="flex justify-center mt-10 md:mt-12">
+              <Button variant="primary" href="/api/resume">
+                Download Full Resume
+              </Button>
+            </div>
+          </AnimatedSection>
         </div>
       </div>
     </section>
