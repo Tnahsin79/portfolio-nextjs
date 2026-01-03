@@ -7,7 +7,7 @@ import Button from "./ui/Button";
 
 // Icon components for each category
 const CategoryIcon = ({ type }: { type: string }) => {
-  const iconClass = "w-6 h-6 sm:w-8 sm:h-8 text-accent";
+  const iconClass = "w-6 h-6 sm:w-7 sm:h-7 text-accent";
   
   switch (type) {
     case "frontend":
@@ -46,20 +46,6 @@ const CategoryIcon = ({ type }: { type: string }) => {
   }
 };
 
-// Proficiency badge colors
-const getLevelColor = (level: string) => {
-  switch (level) {
-    case "Advanced":
-      return "bg-accent/20 text-accent border-accent/30";
-    case "Proficient":
-      return "bg-blue-500/20 text-blue-400 border-blue-500/30";
-    case "Familiar":
-      return "bg-gray-500/20 text-gray-400 border-gray-500/30";
-    default:
-      return "bg-white/10 text-gray-400 border-white/20";
-  }
-};
-
 export default function Skills() {
   return (
     <section id="skills" className="py-12 sm:py-16 md:py-20 border-y border-white/10">
@@ -72,43 +58,38 @@ export default function Skills() {
         </AnimatedSection>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-8 md:mt-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 md:mt-12">
           {skillCategories.map((category, index) => (
             <AnimatedSection
               key={category.title}
               animation="reveal-up"
               delay={index * 100}
             >
-              <div className="group bg-white/[0.03] border border-white/10 rounded-2xl p-5 md:p-6 hover:bg-white/[0.06] hover:border-accent/30 transition-all duration-300 hover-lift h-full">
+              <div className="group bg-white/[0.03] border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 hover:bg-white/[0.06] hover:border-accent/30 transition-all duration-300 hover-lift h-full">
                 {/* Category Header */}
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 sm:p-2.5 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors duration-300">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="p-1.5 sm:p-2 bg-accent/10 rounded-lg sm:rounded-xl group-hover:bg-accent/20 transition-colors duration-300">
                     <CategoryIcon type={category.icon} />
                   </div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white group-hover:text-accent transition-colors duration-300">
-                    {category.title}
-                  </h3>
+                  <div>
+                    <h3 className="text-sm sm:text-base md:text-lg font-semibold text-white group-hover:text-accent transition-colors duration-300">
+                      {category.title}
+                    </h3>
+                    <p className="text-gray-500 text-[10px] sm:text-xs hidden sm:block">
+                      {category.context}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Context */}
-                <p className="text-gray-500 text-xs sm:text-sm mb-4 pl-1">
-                  {category.context}
-                </p>
-
-                {/* Skills List with Proficiency */}
-                <ul className="space-y-2">
+                {/* Skills List */}
+                <ul className="space-y-1.5 sm:space-y-2">
                   {category.skills.map((skill) => (
                     <li
-                      key={skill.name}
-                      className="flex items-center justify-between gap-2 text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
+                      key={skill}
+                      className="flex items-center gap-2 text-gray-400 group-hover:text-gray-300 transition-colors duration-300"
                     >
-                      <span className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0" />
-                        <span className="text-sm">{skill.name}</span>
-                      </span>
-                      <span className={`text-[10px] px-1.5 py-0.5 rounded border ${getLevelColor(skill.level)}`}>
-                        {skill.level}
-                      </span>
+                      <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-accent rounded-full flex-shrink-0" />
+                      <span className="text-xs sm:text-sm">{skill}</span>
                     </li>
                   ))}
                 </ul>
@@ -119,7 +100,7 @@ export default function Skills() {
 
         {/* CTA */}
         <AnimatedSection animation="reveal-up" delay={400}>
-          <div className="flex justify-center mt-10 md:mt-12">
+          <div className="flex justify-center mt-8 md:mt-12">
             <Button variant="outline" href="#projects">
               See My Projects →
             </Button>

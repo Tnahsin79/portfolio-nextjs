@@ -83,45 +83,25 @@ export const skillCategories = [
     title: "Frontend",
     icon: "frontend",
     context: "Building responsive, performant UIs",
-    skills: [
-      { name: "React.js", level: "Advanced" },
-      { name: "Next.js", level: "Advanced" },
-      { name: "TypeScript", level: "Advanced" },
-      { name: "Tailwind / MUI", level: "Proficient" },
-    ],
+    skills: ["React.js", "Next.js", "TypeScript", "Tailwind / MUI"],
   },
   {
     title: "Backend",
     icon: "backend",
     context: "Designing scalable APIs & services",
-    skills: [
-      { name: "NestJS", level: "Advanced" },
-      { name: "Node.js", level: "Advanced" },
-      { name: "Express.js", level: "Proficient" },
-      { name: "REST APIs", level: "Advanced" },
-    ],
+    skills: ["NestJS", "Node.js", "Express.js", "REST APIs"],
   },
   {
     title: "Databases",
     icon: "database",
     context: "Optimizing data storage & queries",
-    skills: [
-      { name: "PostgreSQL", level: "Advanced" },
-      { name: "Redis", level: "Proficient" },
-      { name: "MongoDB", level: "Familiar" },
-      { name: "Schema Design", level: "Advanced" },
-    ],
+    skills: ["PostgreSQL", "Redis", "MongoDB", "Schema Design"],
   },
   {
     title: "Dev & Tools",
     icon: "tools",
     context: "Streamlining development workflow",
-    skills: [
-      { name: "Git / GitHub", level: "Advanced" },
-      { name: "Docker", level: "Familiar" },
-      { name: "Jest", level: "Proficient" },
-      { name: "CI/CD", level: "Proficient" },
-    ],
+    skills: ["Git / GitHub", "Docker", "Jest", "CI/CD"],
   },
 ];
 
