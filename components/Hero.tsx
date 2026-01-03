@@ -1,10 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { personalInfo } from "@/data/constants";
 import Button from "./ui/Button";
+import TypeWriter from "./ui/TypeWriter";
 
 export default function Hero() {
+  const [showRole, setShowRole] = useState(false);
+  const [showTagline, setShowTagline] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
+
   return (
     <section
       id="home"
@@ -28,15 +34,43 @@ export default function Hero() {
               >
                 <div className="w-8 sm:w-12 h-0.5 bg-accent" />
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-300">
-                  I&apos;m {personalInfo.name}
+                  <TypeWriter
+                    text={`I'm ${personalInfo.name}`}
+                    delay={80}
+                    startDelay={500}
+                    onComplete={() => setShowRole(true)}
+                  />
                 </p>
               </div>
               <h2 
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white animate-reveal-up"
-                style={{ animationDelay: "0.3s" }}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white min-h-[1.2em]"
               >
-                {personalInfo.role}
+                {showRole && (
+                  <TypeWriter
+                    text={personalInfo.role}
+                    delay={60}
+                    startDelay={200}
+                    onComplete={() => setShowTagline(true)}
+                  />
+                )}
               </h2>
+              <p 
+                className="text-base sm:text-lg md:text-xl text-accent font-medium min-h-[1.5em]"
+              >
+                {showTagline && (
+                  <TypeWriter
+                    text={personalInfo.roleTagline}
+                    delay={50}
+                    startDelay={200}
+                    onComplete={() => setShowDescription(true)}
+                  />
+                )}
+              </p>
+              <p 
+                className={`text-sm sm:text-base md:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 leading-relaxed transition-opacity duration-500 ${showDescription ? 'opacity-100' : 'opacity-0'}`}
+              >
+                {personalInfo.tagline}
+              </p>
             </div>
 
             <div 
@@ -73,7 +107,7 @@ export default function Hero() {
                 {/* Profile Image */}
                 <div className="absolute inset-4 sm:inset-6 rounded-full overflow-hidden bg-primary">
                   <Image
-                    src="/profile.png"
+                    src="/nishant_v2.png"
                     alt={personalInfo.name}
                     fill
                     className="object-cover object-top scale-110 group-hover:scale-115 transition-transform duration-500"

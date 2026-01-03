@@ -5,6 +5,8 @@ export const personalInfo = {
   name: "Nishant",
   fullName: "Nishant Sharma",
   role: "Senior Software Developer",
+  roleTagline: "MERN | Next.js | NestJS",
+  tagline: "I build scalable web applications used by real users, with strong focus on performance, clean architecture, and PostgreSQL-based systems.",
   email: "4unishant@gmail.com",
   phone: "+91 7838976975",
   location: "Delhi, India",
@@ -15,6 +17,7 @@ export const personalInfo = {
 
 export const navLinks = [
   { label: "Home", href: "#home" },
+  { label: "Skills", href: "#skills" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
@@ -52,6 +55,29 @@ export const skills = [
   "GitHub",
   "Redis",
   "PostgreSQL",
+];
+
+export const skillCategories = [
+  {
+    title: "Frontend",
+    icon: "frontend",
+    skills: ["React.js", "Next.js", "HTML / CSS", "Tailwind / MUI"],
+  },
+  {
+    title: "Backend",
+    icon: "backend",
+    skills: ["Node.js", "Express.js", "NestJS", "REST APIs"],
+  },
+  {
+    title: "Databases",
+    icon: "database",
+    skills: ["PostgreSQL", "MongoDB", "Schema Design", "Multitenancy"],
+  },
+  {
+    title: "Dev & Tools",
+    icon: "tools",
+    skills: ["Git / GitHub", "Docker", "Jest", "CI/CD"],
+  },
 ];
 
 export const services = [
@@ -100,7 +126,12 @@ export const experiences = [
     company: "Appinventiv Technologies pvt ltd",
     location: "Noida, India",
     duration: "Sep 2024 - Present",
-    description: "Leading development of scalable web applications using JavaScript, Nest.js, and TypeScript. Developing Microservices and implementing best practices for code quality and performance optimization.",
+    highlights: [
+      "Lead development of scalable web applications using Nest.js and TypeScript, serving 10,000+ active users",
+      "Architect and implement microservices-based solutions, improving system scalability by 40%",
+      "Establish coding standards and best practices, reducing code review time by 30%",
+      "Collaborate with cross-functional teams to deliver features on time and within scope",
+    ],
     technologies: ["Nest.js", "JavaScript", "TypeScript", "PostgreSQL", "Redis", "GitHub"],
   },
   {
@@ -109,7 +140,12 @@ export const experiences = [
     company: "Bonami Software",
     location: "Noida, India",
     duration: "Apr 2024 - Sep 2024",
-    description: "Developed and maintained multiple client projects digital communication applications. Collaborated with UI/UX teams to deliver high-quality frontend solutions.",
+    highlights: [
+      "Built responsive UI components achieving 95%+ cross-browser compatibility",
+      "Integrated third-party APIs and payment gateways, enhancing application functionality",
+      "Collaborated with UI/UX designers to implement pixel-perfect designs",
+      "Participated in Agile ceremonies including daily standups, sprint planning, and retrospectives",
+    ],
     technologies: ["React", "Node.js", "Next.js", "JavaScript", "SQL"],
   },
   {
@@ -118,8 +154,13 @@ export const experiences = [
     company: "Integra Software Services",
     location: "Puducherry, India",
     duration: "Oct 2021 - March 2024",
-    description: "Started career building responsive websites and web applications. Gained experience in fullstack technologies and agile development methodologies.",
-    technologies: ["JavaScript", "HTML5", "CSS3", "React", "PostgreSQL","MS SQL Server"],
+    highlights: [
+      "Developed full-stack web applications using React, Node.js, and PostgreSQL",
+      "Designed and optimized database schemas, improving query performance by 25%",
+      "Built publication management tools processing 500+ manuscripts monthly",
+      "Collaborated in Agile environment, consistently delivering sprints on schedule",
+    ],
+    technologies: ["JavaScript", "HTML5", "CSS3", "React", "PostgreSQL", "MS SQL Server"],
   },
 ];
 

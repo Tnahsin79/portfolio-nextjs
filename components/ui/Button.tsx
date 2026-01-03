@@ -18,7 +18,7 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   const baseStyles =
-    "px-6 py-3 rounded-md font-medium transition-all duration-300 inline-flex items-center gap-2 text-sm md:text-base relative overflow-hidden group";
+    "px-5 sm:px-6 py-2.5 sm:py-3 rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center gap-2 text-sm sm:text-base relative overflow-hidden group";
 
   const variants = {
     primary:

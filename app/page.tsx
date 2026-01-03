@@ -10,15 +10,15 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-primary">
+    <main className="min-h-screen bg-primary overflow-x-hidden">
       <Header />
       <Hero />
       <Skills />
       
       {/* Services and About in same row on large screens */}
-      <section className="py-16 lg:py-24">
+      <section className="py-10 sm:py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
             {/* Services */}
             <Services />
             

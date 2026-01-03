@@ -22,6 +22,11 @@ export const metadata: Metadata = {
     "Next.js",
   ],
   authors: [{ name: "Nishant Sharma" }],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
@@ -42,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${poppins.variable} font-sans antialiased`}>
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
+      <body className={`${poppins.variable} font-sans antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>

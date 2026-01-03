@@ -27,6 +27,13 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
@@ -35,6 +42,7 @@ body {
   font-family: "Poppins", system-ui, sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
 }
 
 /* Selection */
@@ -295,6 +303,38 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+/* Wave animation for emoji */
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+
+.animate-wave {
+  animation: wave 2.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+/* Cursor blink animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
 }
 
 /* ================================

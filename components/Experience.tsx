@@ -54,10 +54,18 @@ export default function Experience() {
                         <p className="text-accent font-medium text-sm sm:text-base mb-1">{exp.company}</p>
                         <p className="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-4">{exp.location}</p>
 
-                        {/* Description */}
-                        <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                          {exp.description}
-                        </p>
+                        {/* Impact-Driven Highlights */}
+                        <ul className="space-y-2 mb-4">
+                          {exp.highlights.map((highlight, idx) => (
+                            <li 
+                              key={idx} 
+                              className="flex items-start gap-2 text-gray-400 text-xs sm:text-sm leading-relaxed"
+                            >
+                              <span className="w-1.5 h-1.5 bg-accent rounded-full mt-1.5 flex-shrink-0" />
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
 
                         {/* Technologies */}
                         <div className="flex flex-wrap gap-1.5 sm:gap-2">
