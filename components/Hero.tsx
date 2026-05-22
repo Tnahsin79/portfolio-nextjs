@@ -107,7 +107,7 @@ export default function Hero() {
                 {/* Profile Image */}
                 <div className="absolute inset-4 sm:inset-6 rounded-full overflow-hidden bg-primary">
                   <Image
-                    src="/nishant_v2.png"
+                    src="/nishant-headshot.png"
                     alt={personalInfo.name}
                     fill
                     className="object-cover object-top scale-110 group-hover:scale-115 transition-transform duration-500"
