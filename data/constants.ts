@@ -95,13 +95,13 @@ export const skillCategories = [
     title: "Databases",
     icon: "database",
     context: "Optimizing data storage & queries",
-    skills: ["PostgreSQL", "Redis", "MongoDB", "Schema Design"],
+    skills: ["PostgreSQL", "Redis", "MS SQL Server", "Schema Design"],
   },
   {
     title: "Dev & Tools",
     icon: "tools",
     context: "Streamlining development workflow",
-    skills: ["Git / GitHub", "Docker", "Jest", "CI/CD"],
+    skills: ["Git / GitHub", "System Design", "Jest", "Bash Scripting"],
   },
 ];
 
